@@ -1,0 +1,33 @@
+How the Code Works:
+Fetching the Genome:
+
+The script starts by fetching the E. coli K-12 genome using its NCBI accession number U00096.3.
+It uses the Entrez module from Bio to send a request to NCBI and retrieves the genome in GenBank format. The genome data is then parsed using SeqIO.read() to extract the sequence.
+
+Calculating AT Richness:
+
+The calculate_at_richness() function counts the number of 'A' (adenine) and 'T' (thymine) bases in the genome sequence.
+It calculates the percentage of these bases relative to the total length of the sequence, which gives the "AT richness" of the genome.
+
+Finding DnaA Box Motifs:
+
+The function find_dnaa_motifs() searches the genome sequence for instances of the DnaA box motif (TTATCCACA).
+It scans the genome sequence and identifies all positions where this motif appears.
+
+Comparing AT Richness of Motifs vs Genome:
+
+The script calculates the AT richness of the DnaA box motifs (which are always TTATCCACA) using the compare_at_richness() function.
+It then calculates the AT richness of the entire genome and compares both values to determine if DnaA box motifs have a higher AT content compared to the rest of the genome.
+
+Printing the Results:
+
+The script outputs the following:
+The overall AT richness of the E. coli genome.
+The number of DnaA box motifs and their positions in the genome.
+The AT richness of the DnaA box motifs and the rest of the genome.
+The difference in AT richness between the genome and the motifs.
+
+Hypothesis:
+
+Finally, the script prints a hypothesis based on the analysis, suggesting that DnaA proteins preferentially bind to the AT-rich regions (like the DnaA box motifs) to initiate DNA replication at the origin of replication in E. coli.
+
